@@ -18,7 +18,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
     echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
     source ~/.bashrc && \
-    apt-get install unixodbc-dev 
+    apt-get install -y unixodbc-dev 
 
 ENV PATH "/usr/lib/jvm/java-11-openjdk:${PATH}"
 WORKDIR /app
