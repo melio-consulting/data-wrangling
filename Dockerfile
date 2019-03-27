@@ -15,9 +15,8 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     apt-get update && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql17 && \
     ACCEPT_EULA=Y apt-get install -y mssql-tools && \
-    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile && \
-    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc && \
-    source ~/.bashrc && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /home/jovyan/.bash_profile && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /home/jovyan/.bashrc && \
     apt-get install -y unixodbc-dev 
 
 ENV PATH "/usr/lib/jvm/java-11-openjdk:${PATH}"
