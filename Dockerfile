@@ -2,7 +2,7 @@ FROM jupyter/scipy-notebook:2ce7c06a61a1
 
 USER root
 
-RUN pip install pyodbc openpyxl plotly cufflinks
+RUN pip install openpyxl plotly cufflinks
 
 RUN jupyter labextension install jupyterlab_vim && \
     jupyter labextension install @jupyterlab/toc && \
