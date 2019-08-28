@@ -19,6 +19,8 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
 
 RUN pip install sqlalchemy python-dotenv pyodbc openpyxl plotly cufflinks
 
+RUN conda install nodejs
+
 RUN jupyter labextension install jupyterlab_vim && \
     jupyter labextension install @jupyterlab/toc && \
     jupyter labextension install @lckr/jupyterlab_variableinspector && \
