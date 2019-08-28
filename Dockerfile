@@ -2,7 +2,21 @@ FROM jupyter/scipy-notebook:2ce7c06a61a1
 
 USER root
 
-RUN pip install openpyxl plotly cufflinks
+RUN apt-get update && apt-get install -y \
+        libaio-dev \
+        curl \
+        gnupg
+
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && \
+    ACCEPT_EULA=Y apt-get install -y msodbcsql17 && \
+    ACCEPT_EULA=Y apt-get install -y mssql-tools && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /home/jovyan/.bash_profile && \
+    echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> /home/jovyan/.bashrc && \
+    apt-get install -y unixodbc-dev
+
+RUN pip install sqlalchemy python-dotenv pyodbc openpyxl plotly cufflinks
 
 RUN jupyter labextension install jupyterlab_vim && \
     jupyter labextension install @jupyterlab/toc && \
