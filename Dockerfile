@@ -1,4 +1,5 @@
-FROM jupyter/scipy-notebook:2ce7c06a61a1
+FROM gcr.io/kubeflow-images-public/tensorflow-1.13.1-notebook-cpu:v-base-08f3cbc-1166369568336121856
+#FROM jupyter/scipy-notebook:2ce7c06a61a1
 
 USER root
 
