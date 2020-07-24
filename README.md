@@ -1,2 +1,2 @@
 # data-wrangling
-Base image for data science projects including ODBC and HANA connectors
+Base image for data science projects using jupyterlab/tensorflow-notebook
