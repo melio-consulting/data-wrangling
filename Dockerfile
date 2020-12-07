@@ -1,4 +1,4 @@
-FROM jupyter/tensorflow-notebook:5197709e9f23
+FROM jupyter/base-notebook:python-3.8.6
 LABEL maintainer='Merelda Wu'
 
 USER root
@@ -15,5 +15,8 @@ WORKDIR /app
 COPY ./requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 
-RUN jupyter labextension install @axlair/jupyterlab_vim
-RUN jupyter labextension install @jupyterlab/toc
+RUN jupyter labextension install \
+    @axlair/jupyterlab_vim \
+    @jupyterlab/toc \
+    @lckr/jupyterlab_variableinspector
+
