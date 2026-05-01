@@ -2,7 +2,7 @@ jupyterlab_vim==0.14.2
 lckr-jupyterlab-variableinspector==3.0.9
 python-dotenv==1.2.2
 pylint==2.9.3
-pytest==6.2.4
+pytest==9.0.3
 click==8.0.1
 ipydrawio[all]==1.1.1
 pandas==1.3.0
