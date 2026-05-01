@@ -1,6 +1,6 @@
 jupyterlab_vim==0.14.2
 lckr-jupyterlab-variableinspector==3.0.9
-python-dotenv==0.18.0
+python-dotenv==1.2.2
 pylint==2.9.3
 pytest==6.2.4
 click==8.0.1
